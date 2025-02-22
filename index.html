@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Menu Animation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.cdnfonts.com/css/soyuz-grotesk" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li class="menu-item" data-section="hello">hello</li>
+            <li class="menu-item" data-section="project">project</li>
+            <li class="menu-item" data-section="about">about</li>
+            <li class="menu-item" data-section="contact">contact</li>
+        </ul>
+        <div class="line">
+            <div class="ball"></div>
+        </div>
+    </nav>
+
+    <section id="hello" class="screen active">
+        <h1 class="hello-title">We create <span> worlds</span></h1> <!-- Добавлен заголовок -->
+        <img id="logo" class="logo" src="/image/logo.png" alt="">
+        <img id="ball-1" class="ball-image" src="/image/ball_2.png" alt="">
+        <img id="ball-2" class="ball-image" src="/image/ball_1.png" alt="">
+        <img id="ball-3" class="ball-image" src="/image/ball_3.png" alt="">
+        <img id="star-1" class="star-image" src="/image/star_1.png" alt="">
+        <img id="star-2" class="star-image" src="/image/star_2.png" alt="">
+        <img id="tl-hello" class="corner-image" src="/image/TL.png" alt="">
+        <img id="tr-hello" class="corner-image" src="/image/TR.png" alt="">
+        <img id="bl-hello" class="corner-image" src="/image/BL.png" alt="">
+        <img id="br-hello" class="corner-image" src="/image/BR.png" alt="">
+        <div id="circle-portal" class="circle-portal">
+            <img id="person-1" class="person" src="/image/person.png" alt=""> <!-- Переименовал для уникальности -->
+        </div>
+        <div id="circle-portal-2" class="circle-portal">
+            <img id="person-2" class="person" src="/image/person_2.png" alt=""> <!-- Второй персонаж -->
+        </div>
+        <div id="footer-text" class="footer-text">
+            Inspired by a passion for gaming and a desire to create unique virtual worlds, our company, GameDev Studio, was founded in 2015 by a group of enthusiasts who combined their talents in game development.
+        </div>
+        <img id="arrow" class="arrow" src="/image/arrow.png" alt="Arrow">
+    </section>
+
+    <section id="project" class="screen">
+        <h1 class="project-title">Projects</h1>
+        <div class="project-cards">
+            <div class="card">
+                <div class="card-inner">
+                    <img class="card-front" src="/image/card_1.png" alt="Toad Story">
+                    <img class="card-back" src="/image/back_card_1.png" alt="">
+                </div>
+                <h2>Toad Story</h2>
+                <p class="card-description">Rayman Legends has over 100 levels, each with its own unique art style and gameplay.</p>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <img class="card-front" src="/image/card_2.png" alt="Valorant">
+                    <img class="card-back" src="/image/back_card_2.png" alt="">
+                </div>
+                <h2>Monster Phobia</h2>
+                <p class="card-description">Rayman Legends has over 100 levels, each with its own unique art style and gameplay.</p>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <img class="card-front" src="/image/card_3.png" alt="Monster Phobia">
+                    <img class="card-back" src="/image/back_card_3.png" alt="">
+                </div>
+                <h2>Valorant</h2>
+                <p class="card-description">Rayman Legends has over 100 levels, each with its own unique art style and gameplay.</p>
+            </div>
+        </div>
+        <img id="tl-project" class="corner-image" src="/image/TL.png" alt="">
+        <img id="tr-project" class="corner-image" src="/image/TR.png" alt="">
+        <img id="bl-project" class="corner-image" src="/image/BL.png" alt="">
+        <img id="br-project" class="corner-image" src="/image/BR.png" alt="">
+        <img src="/image/back_lb.png" alt="">
+        <img src="/image/back_lt.png" alt="">
+        <img src="/image/back_rb.png" alt="">
+        <img src="/image/back_rt.png" alt="">
+    </section>
+
+    <section id="about" class="screen">
+        <div class="about-content">
+            <h1 class="about-title">ABOUT<span>US</span></h1>
+            <p class="about-text">
+                Inspired by a passion for gaming and a desire to create unique virtual worlds, our company, GameDev Studio, was founded in 2015 by a group of enthusiasts who combined their talents in game development. <br><br>From the very beginning, we set out with the goal of creating not just games, but captivating stories that resonate with players and leave unforgettable impressions.
+            </p>
+            <a class="about-link" href="#">Unread Access </a>
+        </div>
+        <img id="about-left" class="about-image" src="/image/about-left.png" alt="Left Image">
+        <img id="about-right" class="about-image" src="/image/about-right.png" alt="Right Image">
+        <img id="about-bottom" class="about-image" src="/image/about-bottom.png" alt="Bottom Image">
+        <img id="tl-about" class="corner-image" src="/image/TL.png" alt="">
+        <img id="tr-about" class="corner-image" src="/image/TR.png" alt="">
+        <img id="bl-about" class="corner-image" src="/image/BL.png" alt="">
+        <img id="br-about" class="corner-image" src="/image/BR.png" alt="">
+    </section>
+    <section id="contact" class="screen">
+        <div class="contact-content">
+            <h1 class="contact-title">Contacts</h1>
+            <div class="block_logos">
+            <img class="contact-logo" src="/image/logo_moon.svg" alt="Moonmoon Logo">
+            <p>moonmoon </p>
+        </div>
+            <p class="contact-subtitle">Game development company</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><img src="/image/insta.svg" alt="Instagram"></a>
+                <a href="#" class="social-icon"><img src="/image/becha.svg" alt="Behance"></a>
+                <a href="#" class="social-icon"><img src="/image/twitter.svg" alt="Twitter"></a>
+                <a href="#" class="social-icon"><img src="/image/facebook.svg" alt="Facebook"></a>
+            </div>
+            <p class="contact-email">moonmoon@dev.ru</p>
+            <p class="contact-address">Russia, Kazan, st. 15/1</p>
+        </div>
+        <div class="side-text left">©2025 Moonmoon all rights reserved</div>
+        <div class="side-text right">Terms of Use</div>
+        <img id="tl-contact" class="corner-image" src="/image/TL.png" alt="">
+        <img id="tr-contact" class="corner-image" src="/image/TR.png" alt="">
+        <img id="bl-contact" class="corner-image" src="/image/BL.png" alt="">
+        <img id="br-contact" class="corner-image" src="/image/BR.png" alt="">
+        <img src="/image/back_lb.png" alt="">
+        <img src="/image/back_lt.png" alt="">
+        <img src="/image/back_rb.png" alt="">
+        <img src="/image/back_rt.png" alt="">
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

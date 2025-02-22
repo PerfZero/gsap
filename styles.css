@@ -1,0 +1,1200 @@
+/* Reset and base styles  */
+* {
+    padding: 0vw;
+    margin: 0vw;
+    border: none;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Links */
+  
+  a,
+  a:link,
+  a:visited {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  /* Common */
+  
+  aside,
+  nav,
+  footer,
+  header,
+  section,
+  main {
+    display: block;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  
+  ul,
+  ul li {
+    list-style: none;
+  }
+  
+  img {
+    vertical-align: top;
+  }
+  
+  img,
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  address {
+    font-style: normal;
+  }
+  
+  /* Form */
+  
+  input,
+  textarea,
+  button,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+  }
+  
+  input::-ms-clear {
+    display: none;
+  }
+  
+  button,
+  input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+  }
+  
+  input:focus,
+  input:active,
+  button:focus,
+  button:active {
+    outline: none;
+  }
+  
+  button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+  
+  label {
+    cursor: pointer;
+  }
+  
+  legend {
+    display: block;
+  }
+  
+  body {
+    margin: 0;
+    overflow: hidden;
+    background-image: url(/image/1.png);
+    background-size: cover;
+  }
+  
+  .menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 2.0833vw 0;
+    text-align: center;
+    z-index: 10;
+  }
+  
+  .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2.0833vw;
+  }
+  
+  .menu li {
+    cursor: pointer;
+    font-size: 1.4583vw;
+    text-transform: uppercase;
+    font-family: "Soyuz Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.4583vw;
+    line-height: 130%;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(20, 29, 82, 1);
+  }
+  
+  .line {
+    position: relative;
+    height: 0.1042vw;
+    background: linear-gradient(180deg, #2c41b8 0%, #737373 100%);
+    margin-top: 0.5208vw;
+    max-width: 23.9063vw;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .line::before {
+  }
+  
+  .ball {
+    position: absolute;
+    width: 0.5208vw;
+    height: 0.5208vw;
+    background: #000;
+    border-radius: 50%;
+    top: -0.2083vw;
+    left: 0; /* Начальная позиция */
+    transition: left 0.3s ease;
+  }
+  
+  .screen {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.875vw;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    pointer-events: none;
+  }
+  
+  .screen.active {
+    opacity: 1;
+    position: relative;
+    pointer-events: all;
+  }
+  
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  
+    opacity: 0; /* Изначально скрыт */
+  }
+  
+  #ball-1 {
+    bottom: 0;
+    left: 0; /* Слева снизу */
+  }
+  
+  #ball-2 {
+    bottom: 0;
+    right: 0; /* Справа снизу */
+  }
+  
+  #ball-3 {
+    top: 0;
+    right: 0; /* Сверху справа */
+  }
+  
+  .ball-image {
+    position: absolute;
+  }
+  
+  .star-image {
+    position: absolute;
+    opacity: 0; /* Изначально скрыты */
+  }
+  
+  #star-1 {
+    bottom: 3.125vw;
+    right: 3.125vw; /* Справа снизу */
+  }
+  
+  #star-2 {
+    top: 3.125vw;
+    left: 3.125vw; /* Сверху слева */
+  }
+  
+  .ramka {
+    position: absolute;
+    width: 95%;
+  }
+  
+  .corner-image {
+    position: absolute;
+    opacity: 0; /* Изначально скрыты */
+    z-index: 2;
+  }
+  
+  #tl {
+    top: 1.0417vw;
+    left: 1.0417vw;
+  } /* Сверху слева */
+  #tr {
+    top: 1.0417vw;
+    right: 1.0417vw;
+  } /* Сверху справа */
+  #bl {
+    bottom: 1.0417vw;
+    left: 1.0417vw;
+  } /* Снизу слева */
+  #br {
+    bottom: 1.0417vw;
+    right: 1.0417vw;
+  } /* Снизу справа */
+  
+  /* Стили для новых изображений в Projects */
+  #project img[src*="/image/back_lb.png"],
+  #project img[src*="/image/back_lt.png"],
+  #project img[src*="/image/back_rb.png"],
+  #project img[src*="/image/back_rt.png"] {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  #project img[src*="/image/back_lb.png"] {
+    bottom: 0;
+    left: 0;
+  }
+  #project img[src*="/image/back_lt.png"] {
+    top: 0;
+    left: 0;
+  }
+  #project img[src*="/image/back_rb.png"] {
+    bottom: 0;
+    right: 0;
+  }
+  #project img[src*="/image/back_rt.png"] {
+    top: 0;
+    right: 0;
+  }
+  
+  .footer-text {
+    position: absolute;
+    bottom: 11.4583vw; /* Текст над стрелкой */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 22.7083vw;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 0.8333vw;
+    text-align: center;
+    color: #141d52;
+  
+    opacity: 0; /* Изначально скрыт */
+  }
+  
+  .arrow {
+    position: absolute;
+    bottom: 7.2917vw; /* Стрелка внизу */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0; /* Изначально скрыта */
+  }
+  
+  .circle-portal {
+    position: absolute;
+    width: 24.6354vw;
+    height: 26.3542vw;
+  
+    top: 50%;
+    left: 20.8333vw;
+  
+    transform: translate(-50%, -50%);
+    overflow: hidden; /* Скрываем всё, что выходит за круг */
+    opacity: 1; /* Круг всегда виден */
+    background-image: url(/image/persone-mask.png);
+  }
+  
+  .hello-title {
+    font-family: "Soyuz Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 5.5729vw;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #141d52;
+    position: absolute;
+    top: 6.25vw;
+    z-index: 999;
+  }
+  
+  .hello-title span {
+    opacity: 0.1;
+  }
+  
+  #circle-portal-2 {
+    position: absolute;
+    width: 26.6667vw;
+    height: 25.8854vw;
+    left: auto;
+    top: 50%;
+    right: 0;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    overflow: hidden; /* Скрываем всё, что выходит за круг */
+    opacity: 1; /* Круг всегда виден */
+    background-image: url(/image/state=start.png);
+  }
+  
+  #person-2 {
+    width: 26.6667vw;
+    height: 25.8854vw;
+  }
+  
+  .person {
+    position: absolute;
+    bottom: -10%; /* Изначально персонаж полностью ниже круга */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24.6354vw;
+    opacity: 1; /* Персонаж виден, но скрыт за пределами круга */
+  }
+  
+  /* Стили для секции Projects */
+  .project-title {
+    position: absolute;
+    top: 5.2083vw;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5vw;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    opacity: 0;
+  }
+  
+  .project-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2.0833vw;
+    flex-wrap: wrap;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 27.0833vw;
+    object-fit: cover;
+    border-radius: 0.5208vw;
+  }
+  
+  .card h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.25vw;
+    margin: 0.5208vw 0;
+    font-weight: 600;
+  }
+  
+  .card-description {
+    font-family: "Inter", sans-serif;
+    font-size: 0.8333vw;
+    color: #666;
+    opacity: 0; /* Изначально скрыто */
+  }
+  
+  /* Стили для About */
+  .about-content {
+    text-align: center;
+    max-width: 31.25vw;
+    z-index: 1;
+    margin-bottom: 23.4375vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  /* Стили для новых изображений в Contact */
+  #contact img[src*="/image/back_lb.png"],
+  #contact img[src*="/image/back_lt.png"],
+  #contact img[src*="/image/back_rb.png"],
+  #contact img[src*="/image/back_rt.png"] {
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+  }
+  
+  #contact img[src*="/image/back_lb.png"] {
+    bottom: 0;
+    left: 0;
+  }
+  #contact img[src*="/image/back_lt.png"] {
+    top: 0;
+    left: 0;
+  }
+  #contact img[src*="/image/back_rb.png"] {
+    bottom: 0;
+    right: 0;
+  }
+  #contact img[src*="/image/back_rt.png"] {
+    top: 0;
+    right: 0;
+  }
+  
+  .contact-content {
+    text-align: center;
+    max-width: 31.25vw;
+    z-index: 1;
+    height: 21.1979vw;
+    margin-bottom: 23.4375vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  #tl-hello,
+  #tl-project,
+  #tl-about,
+  #tl-contact {
+    top: 1.0417vw;
+    left: 1.0417vw;
+  }
+  #tr-hello,
+  #tr-project,
+  #tr-about,
+  #tr-contact {
+    top: 1.0417vw;
+    right: 1.0417vw;
+  }
+  #bl-hello,
+  #bl-project,
+  #bl-about,
+  #bl-contact {
+    bottom: 1.0417vw;
+    left: 1.0417vw;
+  }
+  #br-hello,
+  #br-project,
+  #br-about,
+  #br-contact {
+    bottom: 1.0417vw;
+    right: 1.0417vw;
+  }
+  
+  .about-title {
+    font-weight: 700;
+    font-size: 5.5729vw;
+    line-height: 100%;
+    text-transform: uppercase;
+    display: flex;
+    gap: 0.7813vw;
+    color: #141d52;
+    font-family: "Soyuz Grotesk", sans-serif;
+  }
+  
+  .about-link {
+    font-weight: 400;
+    font-size: 0.8333vw;
+    font-family: "Inter", sans-serif;
+  
+    margin-top: 1.5625vw;
+    text-align: center;
+    display: flex;
+    gap: 0.5208vw;
+    align-items: center;
+  
+    color: #1233ed;
+  }
+  
+  .about-link::after {
+    content: "";
+    width: 0.4167vw;
+    height: 0.4167vw;
+    display: block;
+    background-image: url(/image/arrow.svg);
+  }
+  
+  #about {
+    background-image: url(/image/back_about.png);
+    background-size: cover;
+  }
+  
+  .about-title span {
+    font-weight: 700;
+    font-size: 5.5729vw;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #141d52;
+  
+    opacity: 0.1;
+  }
+  
+  .about-text {
+    font-weight: 500;
+    font-size: 0.8333vw;
+    margin-top: 2.6042vw;
+    font-family: "Inter", serif;
+  
+    text-align: center;
+    max-width: 18.4896vw;
+    color: #141d52;
+    text-shadow: 0 0 3.9063vw 0 #fff;
+  }
+  
+  .about-image {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  #about-left {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #about-right {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #about-bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .contact-title {
+    font-weight: 700;
+    font-size: 5.5729vw;
+    line-height: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 8.3333vw;
+    color: #141d52;
+    font-family: "Soyuz Grotesk", sans-serif;
+  }
+  
+  .contact-logo {
+    max-width: 7.8125vw; /* Укажи нужный размер логотипа */
+    margin: 1.0417vw 0;
+    opacity: 0;
+  }
+  
+  .contact-subtitle {
+    font-weight: 500;
+    font-size: 0.8333vw;
+    text-align: center;
+    color: #141d52;
+    font-family: "Inter", sans-serif;
+    text-shadow: 0 0 3.9063vw 0 #fff;
+    margin-top: 0.5208vw;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.3542vw;
+    margin-top: 1.0417vw;
+  }
+  
+  .social-icon img {
+    width: 1.6667vw;
+    height: 1.6667vw;
+    opacity: 0;
+  }
+  
+  .contact-email {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 0.8333vw;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-align: center;
+    color: #9baaff;
+    margin-bottom: 0.7813vw;
+  }
+  
+  #contact {
+    background-image: url(/image/back_con.png);
+    background-size: 100%;
+  }
+  
+  .contact-address {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 0.8333vw;
+    text-align: center;
+    color: rgba(50, 50, 50, 0.5);
+  }
+  
+  .menu-item {
+    opacity: 0.5;
+    transition: 0.2s;
+  }
+  
+  .menu-item.active {
+    opacity: 1;
+  }
+  
+  .side-text {
+    position: absolute;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 0.8333vw;
+    color: rgba(13, 62, 90, 0.5);
+    opacity: 0;
+    bottom: 16%;
+    width: 20%;
+    transform: translateY(-50%);
+  }
+  
+  .side-text.left {
+    left: 7.8125vw;
+  }
+  
+  .side-text.right {
+    right: 1.0417vw;
+  }
+  
+  .block_logos {
+    display: flex;
+    align-items: center;
+    gap: 0.7813vw;
+  }
+  
+  .block_logos p {
+    font-family: "Soyuz Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.7188vw;
+    line-height: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    color: #141d52;
+  }
+  
+  .project-title {
+    position: absolute;
+    top: 5.2083vw;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5vw;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    opacity: 0;
+  }
+  
+  .project-cards {
+    display: flex;
+    justify-content: center;
+    gap: 6.0417vw;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 18.0729vw;
+    text-align: center;
+    position: relative;
+    opacity: 0;
+  }
+  
+  .card:nth-child(1) {
+    top: -6.7708vw;
+  }
+  
+  .card:nth-child(2) {
+    top: 2.6042vw;
+  }
+  
+  .project-title {
+    font-family: "Soyuz Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 5.5729vw;
+    line-height: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    color: #141d52;
+  }
+  
+  .card:nth-child(3) {
+    top: -4.6875vw;
+  }
+  
+  .card-inner {
+    position: relative;
+    width: 18.0729vw;
+    height: 27.0833vw; /* Высота карточки */
+    transform-style: preserve-3d;
+    transition: transform 0.6s; /* Для плавности, если нужно вручную */
+  }
+
+  .card-inner img{
+    border-radius: 10px;
+  }
+  
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Скрываем обратную сторону при повороте */
+    border-radius: 0.5208vw;
+    object-fit: cover;
+    left: 0;
+  }
+  
+  .card-front {
+    transform: rotateY(0deg); /* Лицевая сторона */
+  }
+  
+  .card-back {
+    transform: rotateY(180deg); /* Обратная сторона */
+  }
+  
+  #project {
+    background-image: url(/image/back_con.png);
+    background-size: cover;
+  }
+  
+  .card h2 {
+    font-family: "Soyuz Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.0417vw;
+    text-align: center;
+    color: #141d52;
+  }
+  
+  .card-description {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 0.8333vw;
+    text-align: center;
+    color: #141d52;
+  }
+  
+  @media (max-width: 768px) {
+    .ball-image {
+      position: absolute;
+      width: 20%;
+    }
+  
+    .star-image {
+      position: absolute;
+      opacity: 0;
+      width: 20%;
+    }
+  
+    .corner-image {
+      position: absolute;
+      opacity: 0;
+      z-index: 2;
+      width: 20%;
+    }
+    .hello-title {
+      font-family: "Soyuz Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 18.1395vw;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: #141d52;
+      position: absolute;
+      top: 8.1395vw;
+      z-index: 999;
+      width: 93%;
+      text-align: center;
+    }
+  
+    .menu li {
+      cursor: pointer;
+      font-size: 1.4583vw;
+      text-transform: uppercase;
+      font-family: "Soyuz Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 6.0465vw;
+      line-height: 130%;
+      text-transform: uppercase;
+      text-align: center;
+      color: rgba(20, 29, 82, 1);
+    }
+  
+    .line {
+      position: relative;
+      height: .2326vw;
+      background: linear-gradient(180deg, #2c41b8 0%, #737373 100%);
+      margin-top: 0.5208vw;
+      max-width: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .ball {
+      position: absolute;
+      width: 1.1628vw;
+      height: 1.1628vw;
+      background: #000;
+      border-radius: 50%;
+      top: -0.4651vw;
+      left: 0;
+      transition: left 0.3sease;
+    }
+  
+    .logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.2 !important;
+      height: 50%;
+      object-fit: cover;
+    }
+  
+    .circle-portal {
+      position: absolute;
+      width: 58.1395vw;
+      height: 58.1395vw;
+      top: 39%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      opacity: 1;
+      background-image: url(/image/persone-mask.png);
+      background: none;
+    }
+  
+    .person {
+      position: absolute;
+      bottom: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: auto !important;
+      height: auto !important;
+      opacity: 1;
+    }
+  
+    #circle-portal-2 {
+      position: absolute;
+      width: 58.1395vw;
+      height: 58.1395vw;
+      left: auto;
+      top: 66%;
+      right: 0;
+      border-radius: 100%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      opacity: 1;
+      background: none;
+    }
+  
+    .footer-text {
+      position: absolute;
+      bottom: 36.0465vw;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 90%;
+      text-align: center;
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 3.2558vw;
+      width: 100%;
+      text-align: center;
+      color: #141d52;
+      opacity: 0;
+    }
+    /* Стили для новых изображений в Projects */
+    #project img[src*="/image/back_lb.png"],
+    #project img[src*="/image/back_lt.png"],
+    #project img[src*="/image/back_rb.png"],
+    #project img[src*="/image/back_rt.png"] {
+      width: 20%;
+    }
+  
+    .project-title {
+      position: absolute;
+      top: 15.1163vw;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11.1628vw;
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      opacity: 0;
+    }
+  
+    .project-cards {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      flex-direction: column;
+      width: 89%;
+    }
+  
+    .card {
+      text-align: center;
+      position: relative;
+      opacity: 0;
+    }
+  
+    .card:nth-child(1) {
+        top: 34.8837vw;
+    }
+  
+    .card:nth-child(2) {
+        top: -11.6279vw;
+        left: 48.8372vw;
+    }
+  
+    .card:nth-child(3) {
+      top: -25.5814vw;
+    }
+  
+    #contact img[src*="/image/back_lb.png"],
+    #contact img[src*="/image/back_lt.png"],
+    #contact img[src*="/image/back_rb.png"],
+    #contact img[src*="/image/back_rt.png"] {
+      width: 20%;
+    }
+  
+    #contact {
+      background-image: url(/image/back_con.png);
+      background-size: cover;
+      background-position: 50% 50%;
+  }
+  .contact-title {
+      font-weight: 700;
+      font-size: 15.5729vw;
+      line-height: 100%;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 4.6512vw;
+      color: #141d52;
+      font-family: "Soyuz Grotesk", sans-serif;
+  }
+  
+  .contact-subtitle {
+      font-weight: 500;
+      font-size: 4.186vw;
+      text-align: center;
+      color: #141d52;
+      font-family: "Inter", sans-serif;
+      text-shadow: 0 0 3.9063vw 0 #fff;
+      margin-top: 3.4884vw;
+      opacity: 0.8;
+  }
+  
+  
+  
+  .social-icon img {
+      width: 8.8372vw;
+      height: 8.8372vw;
+      opacity: 0;
+  }
+  
+  
+  .contact-email {
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+      font-size: 4.6512vw;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      text-align: center;
+      color: #9baaff;
+      margin-bottom: 3.4884vw;
+      margin-top: 3.4884vw;
+  }
+  
+  .contact-address {
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+      font-size: 3.0233vw;
+      text-align: center;
+      color: rgba(50, 50, 50, 0.5);
+  }
+  
+  .side-text {
+      position: absolute;
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+      font-size: 3.2558vw;
+      color: rgba(13, 62, 90, 0.5);
+      opacity: 0;
+      bottom: 16%;
+      width: 42%;
+      transform: translateY(-50%);
+  }
+  
+  .about-image{
+      width: 30%;
+  }
+  
+  #about-left {
+      left: 0;
+      top: 20%;
+      transform: translateY(-50%);
+      width: 50%;
+  }
+  
+  
+  #about-right {
+      right: 0;
+      top: 70%;
+      transform: translateY(-50%);
+  }
+  
+  .about-title {
+      font-weight: 700;
+      font-size: 19.7674vw;
+      line-height: 100%;
+      text-transform: uppercase;
+      display: flex
+  ;
+      gap: 0.7813vw;
+      color: #141d52;
+      font-family: "Soyuz Grotesk", sans-serif;
+  }
+  
+  .about-title span {
+      font-weight: 700;
+      font-size: 19.7674vw;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: #141d52;
+      opacity: 0.1;
+  }
+  
+  .about-text {
+      font-weight: 500;
+      font-size: 3.7209vw;
+      margin-top: 2.6042vw;
+      font-family: "Inter", serif;
+      text-align: center;
+      max-width: 100%;
+      color: #141d52;
+      text-shadow: 0 0 3.9063vw 0 #fff;
+  }
+
+  .card h2 {
+    font-family: "Soyuz Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 5.1163vw;
+    text-align: center;
+    color: #141d52;
+}
+
+.card-description {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 2.5581vw;
+    text-align: center;
+    color: #141d52;
+}
+  
+  .about-content {
+      text-align: center;
+      max-width: 90%;
+      z-index: 1;
+      margin-bottom: 23.4375vw;
+      display: flex
+  ;
+      align-items: center;
+      flex-direction: column;
+  }
+  
+  .about-link {
+      font-weight: 400;
+      font-size: 6.0465vw;
+      font-family: "Inter", sans-serif;
+      margin-top: 3.4884vw;
+      text-align: center;
+      display: flex
+  ;
+      gap: 2.3256vw;
+      align-items: center;
+      color: #1233ed;
+  }
+  
+  section{
+      overflow: hidden;
+  }
+  
+  
+  #project {
+      background-image: url(/image/back_con.png);
+      background-size: cover;
+      background-position: 50%;
+  }
+  .about-link::after {
+      content: "";
+      width: 2.7907vw;
+      height: 2.7907vw;
+      display: block;
+      background-image: url(/image/arrow.svg);
+      background-size: cover;
+  }
+  
+  .social-icons {
+      display: flex
+  ;
+      justify-content: center;
+      gap: 2.3256vw;
+      margin-top: 4.6512vw;
+  }
+  .contact-logo {
+      max-width: 23.2558vw;
+      margin: 1.0417vw 0;
+  }
+  
+  .contact-content {
+      text-align: center;
+      max-width: 90%;
+      z-index: 1;
+      height: auto;
+      margin-bottom: 11.6279vw;
+      display: flex
+  ;
+      align-items: center;
+      flex-direction: column;
+  }
+  
+  .block_logos {
+      display: flex
+  ;
+      align-items: center;
+      gap: 2.3256vw;
+  }
+  
+  .block_logos p {
+      font-family: "Soyuz Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 4.186vw;
+      line-height: 100%;
+      text-transform: uppercase;
+      text-align: center;
+      color: #141d52;
+  }
+  
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 54.4186vw;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+  
+    .card {
+      text-align: center;
+      position: relative;
+      opacity: 0;
+      width: 38.1395vw;
+  }
+  
+    .card img {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+      border-radius: 3.4884vw;
+    }
+  }
+  
