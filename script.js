@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let lastScrollTime = 0;
     const scrollDelay = 500;
 
+    // Переменные для touch-событий
+    let touchStartY = 0;
+    let touchEndY = 0;
+    const minSwipeDistance = 50; // Минимальная дистанция свайпа
+
     // Функция для перемещения шарика
     function moveBall(target) {
         const rect = target.getBoundingClientRect();
@@ -59,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Анимация элементов текущей секции
         const section = sections[index];
-        const helloTitle = section.querySelector(".hello-title"); // Добавлен заголовок
+        const helloTitle = section.querySelector(".hello-title");
         const logo = section.querySelector(".logo");
         const ball1 = section.querySelector("#ball-1");
         const ball2 = section.querySelector("#ball-2");
@@ -72,8 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const br = section.querySelector(`#br-${section.id}`);
         const footerText = section.querySelector(".footer-text");
         const arrow = section.querySelector(".arrow");
-        const person1 = section.querySelector("#person-1"); // Первый персонаж
-        const person2 = section.querySelector("#person-2"); // Второй персонаж
+        const person1 = section.querySelector("#person-1");
+        const person2 = section.querySelector("#person-2");
         const projectTitle = section.querySelector(".project-title");
         const cards = section.querySelectorAll(".card");
         const cardInners = section.querySelectorAll(".card-inner");
@@ -170,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Обработчик скролла с задержкой
+    // Обработчик скролла для десктопа
     document.addEventListener("wheel", (e) => {
         const now = Date.now();
         if (now - lastScrollTime < scrollDelay || isScrolling) return;
@@ -184,6 +189,38 @@ document.addEventListener("DOMContentLoaded", () => {
             currentIndex--;
             if (currentIndex < 0) currentIndex = 0;
             switchSection(currentIndex);
+        }
+    });
+
+    // Обработчики для сенсорных событий
+    document.addEventListener("touchstart", (e) => {
+        touchStartY = e.touches[0].clientY;
+    });
+
+    document.addEventListener("touchmove", (e) => {
+        e.preventDefault(); // Предотвращаем прокрутку страницы
+        touchEndY = e.touches[0].clientY;
+    }, { passive: false });
+
+    document.addEventListener("touchend", () => {
+        const now = Date.now();
+        if (now - lastScrollTime < scrollDelay || isScrolling) return;
+
+        const swipeDistance = touchStartY - touchEndY;
+
+        if (Math.abs(swipeDistance) > minSwipeDistance) {
+            lastScrollTime = now;
+            if (swipeDistance > 0) {
+                // Свайп вверх
+                currentIndex++;
+                if (currentIndex >= sections.length) currentIndex = sections.length - 1;
+                switchSection(currentIndex);
+            } else {
+                // Свайп вниз
+                currentIndex--;
+                if (currentIndex < 0) currentIndex = 0;
+                switchSection(currentIndex);
+            }
         }
     });
 
