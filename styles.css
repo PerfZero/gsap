@@ -167,9 +167,14 @@
     background: #000;
     border-radius: 50%;
     top: -0.2083vw;
-    left: 0; /* Начальная позиция */
-    transition: left 0.3s ease;
+    left: 0;
+    transition: left 0.3sease;
+    border-radius: 100%;
+    background: linear-gradient(90deg, #2c41b8 0%, #141d52 100%);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 2px 9px 0 rgba(22, 33, 93, 0.5);
   }
+
   
   .screen {
     height: 100vh;
@@ -833,13 +838,17 @@
     }
     .ball {
       position: absolute;
-      width: 1.1628vw;
-      height: 1.1628vw;
+      width: 0.5208vw;
+      height: 0.5208vw;
       background: #000;
       border-radius: 50%;
-      top: -0.4651vw;
+      top: -0.2083vw;
       left: 0;
       transition: left 0.3sease;
+      border-radius: 100%;
+      background: linear-gradient(90deg, #2c41b8 0%, #141d52 100%);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 2px 9px 0 rgba(22, 33, 93, 0.5);
     }
   
     .logo {
