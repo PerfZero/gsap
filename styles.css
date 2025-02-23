@@ -808,9 +808,10 @@
       text-transform: uppercase;
       color: #141d52;
       position: absolute;
-      top: 8.1395vw;
+      top: 12.1395vw;
       z-index: 999;
       width: 93%;
+      line-height: 85%;
       text-align: center;
     }
   
@@ -838,17 +839,21 @@
     }
     .ball {
       position: absolute;
-      width: 0.5208vw;
-      height: 0.5208vw;
+      width: 1.1628vw;
+      height: 1.1628vw;
       background: #000;
       border-radius: 50%;
-      top: -0.2083vw;
+      top: -2px;
       left: 0;
       transition: left 0.3sease;
       border-radius: 100%;
       background: linear-gradient(90deg, #2c41b8 0%, #141d52 100%);
       backdrop-filter: blur(2px);
       box-shadow: 0 2px 9px 0 rgba(22, 33, 93, 0.5);
+    }
+
+    .project-title{
+      font-family: "Soyuz Grotesk", sans-serif !important;
     }
   
     .logo {
