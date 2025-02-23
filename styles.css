@@ -4,6 +4,38 @@
     margin: 0vw;
     border: none;
   }
+
+  @font-face {
+    font-family: 'Soyuz Grotesk'; /* Имя шрифта, которое вы будете использовать */
+    src: url('../fonts/Soyuz Grotesk Bold.woff') format('woff'), /* Формат WOFF */
+         url('../fonts/Soyuz Grotesk Bold.otf') format('opentype'); /* Формат OTF */
+    font-weight: bold; /* Вес шрифта */
+    font-style: normal; /* Стиль шрифта */
+}
+
+/* Inter 24pt Regular */
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter_24pt-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Inter 24pt Medium */
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter_24pt-Medium.ttf') format('truetype');
+  font-weight: 500; /* Medium обычно соответствует 500 */
+  font-style: normal;
+}
+
+/* Inter 24pt SemiBold */
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter_24pt-SemiBold.ttf') format('truetype');
+  font-weight: 600; /* SemiBold обычно соответствует 600 */
+  font-style: normal;
+}
   
   *,
   *::before,
@@ -157,7 +189,18 @@
     transform: translate(-50%, -50%);
   }
   
-  .line::before {
+  .line::after {
+    content: '';
+    background-image: url(/image/Arrow\ 1.svg);
+    height: 8px;
+    display: block;
+    position: absolute;
+    right: -5px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    top: -3px;
+    width: 7px;
+    object-fit: cover;
   }
   
   .ball {
