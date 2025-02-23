@@ -905,7 +905,20 @@
       transform: translateX(-50%);
       opacity: 1 !important;
       height: 50%;
+      display: none;
       object-fit: cover;
+    }
+
+    #logo_b{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 1 !important;
+      height: 10%;
+      object-fit: cover;
+      left: 50px;
+      top: 220px;
+
     }
   
     .circle-portal {

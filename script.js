@@ -237,4 +237,19 @@ document.addEventListener("DOMContentLoaded", () => {
     initialItem.classList.add("active");
     moveBall(initialItem);
     switchSection(0);
+
+    // Автоматический скроллинг каждые 3 секунды
+    const autoScrollInterval = setInterval(() => {
+        if (!isScrolling) {
+            currentIndex++;
+            if (currentIndex >= sections.length) {
+                currentIndex = 0; // Возвращаемся к началу
+            }
+            switchSection(currentIndex);
+        }
+    }, 3000); // 3000мс = 3 секунды
+
+    // Остановка автоскроллинга при взаимодействии пользователя
+    document.addEventListener("wheel", () => clearInterval(autoScrollInterval));
+    document.addEventListener("touchstart", () => clearInterval(autoScrollInterval));
 });
