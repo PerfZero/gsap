@@ -220,7 +220,7 @@
 
   
   .screen {
-    height: 100vh;
+   height: 1080px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -543,6 +543,7 @@
     gap: 0.7813vw;
     color: #141d52;
     font-family: "Soyuz Grotesk", sans-serif;
+    
   }
   
   .about-link {
@@ -873,7 +874,7 @@
   
     .line {
       position: relative;
-      height: .2326vw;
+      height: 1px;
       background: linear-gradient(180deg, #2c41b8 0%, #737373 100%);
       margin-top: 0.5208vw;
       max-width: 80%;
@@ -925,13 +926,17 @@
       position: absolute;
       width: 58.1395vw;
       height: 58.1395vw;
-      top: 39%;
+      top: 29%;
       left: 50%;
       transform: translate(-50%, -50%);
       overflow: hidden;
       opacity: 1;
       background-image: url(/image/persone-mask.png);
       background: none;
+    }
+
+    .screen{
+      height: 100vh;
     }
   
     .person {
@@ -949,7 +954,7 @@
       width: 58.1395vw;
       height: 58.1395vw;
       left: auto;
-      top: 66%;
+      top: 56%;
       right: 0;
       border-radius: 100%;
       transform: translate(-50%, -50%);
@@ -1091,8 +1096,17 @@
       color: rgba(13, 62, 90, 0.5);
       opacity: 0;
       bottom: 16%;
-      width: 42%;
+      width: auto;
       transform: translateY(-50%);
+  }
+
+  .side-text.right{
+    right: 20px;
+  }
+  
+
+  .side-text.left{
+    left: 20px;
   }
   
   .about-image{
@@ -1248,7 +1262,7 @@
     .card-inner {
       position: relative;
       width: 100%;
-      height: 54.4186vw;
+      height: 48.4186vw;
       transform-style: preserve-3d;
       transition: transform 0.6s;
     }

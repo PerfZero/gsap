@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             switchSection(currentIndex);
         }
-    }, 3000); // 3000мс = 3 секунды
+    }, 800000); // 3000мс = 3 секунды
 
     // Остановка автоскроллинга при взаимодействии пользователя
     document.addEventListener("wheel", () => clearInterval(autoScrollInterval));
